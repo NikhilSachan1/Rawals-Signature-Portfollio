@@ -1706,52 +1706,117 @@ body {
   }
 }
 
-/* How to Enjoy Rawals Signature Chutney */
+/* How to Enjoy Rawal's Signature Chutney — revamped */
 .how-to-enjoy-block {
-  margin-top: 3rem;
-  padding: 2rem 1.5rem;
-  background: var(--white);
-  border-radius: 16px;
+  margin-top: 3.5rem;
+  padding: 2.5rem 1.5rem;
+  background: linear-gradient(180deg, var(--white) 0%, var(--cream) 100%);
+  border-radius: 20px;
   border: 1px solid var(--cream-dark);
-  max-width: 700px;
+  max-width: 720px;
   margin-left: auto;
   margin-right: auto;
+  box-shadow: 0 8px 32px rgba(61, 41, 20, 0.06);
+}
+
+.how-to-enjoy-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  margin: 0 0 0.5rem;
+  text-align: center;
 }
 
 .how-to-enjoy-title {
   font-family: var(--font-head);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
   color: var(--brown);
-  margin: 0 0 1.25rem;
+  margin: 0 0 0.5rem;
   text-align: center;
+  line-height: 1.3;
 }
 
-.how-to-enjoy-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.how-to-enjoy-tagline {
+  font-size: 0.95rem;
+  color: var(--gray-500);
+  text-align: center;
+  margin: 0 0 1.75rem;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.how-to-enjoy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 576px) {
+  .how-to-enjoy-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.how-to-enjoy-card {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem 1.5rem;
-}
-
-.how-to-enjoy-list li {
-  display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--brown-light);
-  background: var(--cream);
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
+  justify-content: center;
+  text-align: center;
+  padding: 1.25rem 1rem;
+  background: var(--white);
+  border-radius: 14px;
   border: 1px solid var(--cream-dark);
+  box-shadow: 0 2px 12px rgba(61, 41, 20, 0.04);
+  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), border-color 0.25s;
 }
 
-.how-to-enjoy-icon {
-  font-size: 1.2rem;
+.how-to-enjoy-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(61, 41, 20, 0.08);
+  border-color: var(--gold-border);
+}
+
+.how-to-enjoy-card-icon {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.how-to-enjoy-card-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--brown);
+  line-height: 1.3;
+}
+
+@media (max-width: 575px) {
+  .how-to-enjoy-block {
+    margin-top: 2.5rem;
+    padding: 1.75rem 1rem;
+  }
+  .how-to-enjoy-title {
+    font-size: 1.2rem;
+  }
+  .how-to-enjoy-tagline {
+    font-size: 0.9rem;
+    margin-bottom: 1.25rem;
+  }
+  .how-to-enjoy-card {
+    padding: 1rem 0.75rem;
+  }
+  .how-to-enjoy-card-icon {
+    font-size: 1.75rem;
+  }
+  .how-to-enjoy-card-label {
+    font-size: 0.85rem;
+  }
 }
 
 
