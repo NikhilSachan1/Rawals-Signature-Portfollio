@@ -233,6 +233,22 @@ function initRawalsPage() {
   sectionHeads.forEach(function (el) {
     observer.observe(el);
   });
+
+  // Deterrent: reduce casual right-click inspect / view source (capture phase so it runs before browser)
+  document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  }, true);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
+        (e.ctrlKey && e.key === 'U') ||
+        (e.metaKey && e.key === 'u') ||
+        (e.metaKey && e.altKey && e.key === 'I')) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }
+  }, true);
 }
 
 // Run when DOM is ready; Bootstrap script runs before this
