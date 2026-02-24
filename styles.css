@@ -707,6 +707,80 @@ body {
   text-transform: uppercase;
 }
 
+/* About / Our Story — small screens */
+@media (max-width: 991px) {
+  .about-rawals {
+    padding: 2.5rem 0;
+  }
+  .about-rawals-inner {
+    gap: 2rem;
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-rawals {
+    padding: 2rem 0;
+  }
+  .about-rawals-inner {
+    gap: 1.75rem;
+    padding: 0 1rem;
+  }
+  .about-rawals-visual {
+    order: -1;
+  }
+  .about-rawals-content {
+    text-align: left;
+  }
+  .about-rawals-eyebrow {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.5rem;
+  }
+  .about-rawals-title {
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+  .about-rawals-lead {
+    font-size: 1rem;
+    line-height: 1.55;
+    margin-bottom: 0.6rem;
+  }
+  .about-rawals-text {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+  .about-rawals-list li {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+  }
+  .about-rawals-cta {
+    margin-top: 1rem;
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .about-rawals-logo {
+    padding: 1.5rem 1.25rem;
+    border-radius: 16px;
+  }
+  .about-rawals-logo-img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 0.75rem;
+  }
+  .about-rawals-logo-name {
+    font-size: 1.5rem;
+  }
+  .about-rawals-logo-tagline {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+  }
+}
+
 /* ========== Our Signature Product — product spotlight ========== */
 /* Products section wrapper (Chutney Variants only) */
 .section-products-wrap {
@@ -2505,12 +2579,28 @@ body {
   }
 }
 @media (max-width: 767px) {
+  .hero-sample .hero-content-col {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .hero-btns {
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+    padding: 0 0.5rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
   .hero-btns .btn-hero-primary,
   .hero-btns .btn-hero-outline,
   .hero-sample .hero-btns .btn-hero-sample-primary,
   .hero-sample .hero-btns .btn-hero-sample-outline {
     width: 100%;
+    min-width: 0;
     text-align: center;
+    display: block;
+    box-sizing: border-box;
+    padding: 0.9rem 1.25rem;
   }
   .about-stats {
     grid-template-columns: 1fr;
