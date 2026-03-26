@@ -1,259 +1,127 @@
-/**
- * Rawals Signature Chutney - Landing Page Scripts
- * Bootstrap 5 + Vanilla JS - Smooth modern animations
- */
-
 function initRawalsPage() {
-  'use strict';
+  "use strict";
 
-  var yearEl = document.getElementById('year');
+  var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Navbar: slide-in on load, then scroll state
-  var mainNav = document.getElementById('mainNav');
-  if (mainNav) {
-    mainNav.classList.add('nav-visible');
-    function updateNavbar() {
-      if (window.scrollY > 50) {
-        mainNav.classList.add('scrolled');
-      } else {
-        mainNav.classList.remove('scrolled');
-      }
-    }
-    window.addEventListener('scroll', updateNavbar);
-    updateNavbar();
+  var mainNav = document.getElementById("mainNav");
+  function handleHeaderState() {
+    if (!mainNav) return;
+    if (window.scrollY > 16) mainNav.classList.add("scrolled");
+    else mainNav.classList.remove("scrolled");
   }
+  window.addEventListener("scroll", handleHeaderState);
+  handleHeaderState();
 
-  // Back to top button - show after scrolling down
-  var backToTop = document.getElementById('backToTop');
-  if (backToTop) {
-    function toggleBackToTop() {
-      if (window.scrollY > 400) {
-        backToTop.classList.add('visible');
-      } else {
-        backToTop.classList.remove('visible');
-      }
-    }
-    window.addEventListener('scroll', toggleBackToTop);
-    toggleBackToTop();
+  var backToTop = document.getElementById("backToTop");
+  function toggleBackToTop() {
+    if (!backToTop) return;
+    if (window.scrollY > 350) backToTop.classList.add("visible");
+    else backToTop.classList.remove("visible");
   }
+  window.addEventListener("scroll", toggleBackToTop);
+  toggleBackToTop();
 
-  // Hero staggered reveal - run after paint so initial state is visible first
-  function runHeroReveal() {
-    var heroReveals = document.querySelectorAll('.hero-reveal, .hero-reveal-right');
-    heroReveals.forEach(function (el) {
-      var delay = parseInt(el.getAttribute('data-delay') || 0, 10);
-      setTimeout(function () {
-        el.classList.add('revealed');
-      }, 150 + delay);
-    });
-    var scrollReveal = document.querySelector('.hero-scroll-reveal');
-    if (scrollReveal) {
-      setTimeout(function () {
-        scrollReveal.classList.add('revealed');
-      }, 700);
-    }
-  }
-  requestAnimationFrame(function () {
-    setTimeout(runHeroReveal, 50);
-  });
-
-  // Typewriter effect in hero
-  (function runTypewriter() {
-    var el = document.getElementById('heroTypewriter');
-    if (!el) return;
-    var phrases = ['Mirchi Chutney', 'Aam Chutney', 'Tomato Chutney', 'Marwadi Lahsun'];
-    var phraseIndex = 0;
-    var charIndex = 0;
-    var isDeleting = false;
-    var typeSpeed = 90;
-    var deleteSpeed = 50;
-    var pauseEnd = 1800;
-    var pauseStart = 600;
-
-    function tick() {
-      var current = phrases[phraseIndex];
-      if (isDeleting) {
-        el.textContent = current.substring(0, charIndex - 1);
-        charIndex--;
-        if (charIndex === 0) {
-          isDeleting = false;
-          phraseIndex = (phraseIndex + 1) % phrases.length;
-          setTimeout(tick, pauseStart);
-          return;
-        }
-        setTimeout(tick, deleteSpeed);
-        return;
-      }
-      el.textContent = current.substring(0, charIndex + 1);
-      charIndex++;
-      if (charIndex === current.length) {
-        isDeleting = true;
-        setTimeout(tick, pauseEnd);
-        return;
-      }
-      setTimeout(tick, typeSpeed);
-    }
-    setTimeout(tick, 800);
-  })();
-
-  // Nav links: smooth scroll + close mobile menu (Bootstrap 5)
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-    var href = link.getAttribute('href');
-    if (href === '#') return;
-    link.addEventListener('click', function (e) {
-      var targetId = href.slice(1);
-      var target = document.getElementById(targetId);
+    var href = link.getAttribute("href");
+    if (!href || href === "#") return;
+    link.addEventListener("click", function (event) {
+      var target = document.querySelector(href);
       if (!target) return;
-      e.preventDefault();
-      if (history.replaceState) history.replaceState(null, '', href);
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      var collapse = document.getElementById('navbarNav');
-      if (collapse && collapse.classList.contains('show') && typeof bootstrap !== 'undefined' && bootstrap.Collapse) {
-        var bsCollapse = bootstrap.Collapse.getOrCreateInstance(collapse);
-        bsCollapse.hide();
+      event.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      var mobileNav = document.getElementById("mobileNav");
+      if (mobileNav && mobileNav.classList.contains("show") && typeof bootstrap !== "undefined") {
+        bootstrap.Collapse.getOrCreateInstance(mobileNav).hide();
       }
     });
   });
 
-  // Contact form submit
-  const contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
+  var revealElements = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var delay = entry.target.getAttribute("data-reveal-delay");
+        if (delay) {
+          setTimeout(function () {
+            entry.target.classList.add("in-view");
+          }, parseInt(delay, 10));
+        } else {
+          entry.target.classList.add("in-view");
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    revealElements.forEach(function (el) { observer.observe(el); });
+  } else {
+    revealElements.forEach(function (el) { el.classList.add("in-view"); });
+  }
 
-      const name = document.getElementById('name').value.trim();
-      const phone = document.getElementById('phone').value.trim();
-      const message = document.getElementById('message').value.trim();
+  var contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      var name = document.getElementById("name").value.trim();
+      var phone = document.getElementById("phone").value.trim();
+      var message = document.getElementById("message").value.trim();
 
       if (!name || !phone || !message) {
-        showToast('Please fill all required fields.', 'warning');
+        showToast("Please fill all required fields.", "warning");
+        return;
+      }
+      if (!/^\d{10}$/.test(phone)) {
+        showToast("Please enter a valid 10-digit phone number.", "warning");
         return;
       }
 
-      if (phone.length !== 10 || !/^\d+$/.test(phone)) {
-        showToast('Please enter a valid 10-digit phone number.', 'warning');
-        return;
-      }
-
-      // Simulate submit (replace with actual API/backend later)
-      const btn = contactForm.querySelector('button[type="submit"]');
-      const originalText = btn.textContent;
+      var btn = contactForm.querySelector('button[type="submit"]');
+      var previous = btn.textContent;
       btn.disabled = true;
-      btn.textContent = 'भेज रहे हैं...';
+      btn.textContent = "Sending...";
 
       setTimeout(function () {
-        showToast('Thank you! Your message has been received. We will get in touch soon.', 'success');
         contactForm.reset();
         btn.disabled = false;
-        btn.textContent = originalText;
-      }, 1200);
+        btn.textContent = previous;
+        showToast("Thanks! We will contact you soon.", "success");
+      }, 1000);
     });
   }
 
-  // Simple toast notification (no extra dependency)
   function showToast(message, type) {
-    const existing = document.querySelector('.rawals-toast');
-    if (existing) existing.remove();
+    var oldToast = document.querySelector(".rawals-toast");
+    if (oldToast) oldToast.remove();
 
-    const toast = document.createElement('div');
-    toast.className = 'rawals-toast position-fixed bottom-0 end-0 m-4 p-3 rounded-3 shadow-lg border-0';
-    toast.style.zIndex = '9999';
-    toast.style.minWidth = '280px';
-    toast.style.animation = 'slideIn 0.3s ease';
-
-    if (type === 'success') {
-      toast.style.background = 'linear-gradient(135deg, #2d5a27, #1e3d1a)';
-      toast.style.color = '#fff';
-    } else {
-      toast.style.background = '#fff';
-      toast.style.color = '#1e3d1a';
-      toast.style.border = '2px solid #c9a227';
-    }
-
+    var toast = document.createElement("div");
+    toast.className = "rawals-toast";
     toast.textContent = message;
+    toast.style.position = "fixed";
+    toast.style.right = "16px";
+    toast.style.bottom = "16px";
+    toast.style.zIndex = "9999";
+    toast.style.padding = "10px 14px";
+    toast.style.borderRadius = "8px";
+    toast.style.fontSize = "14px";
+    toast.style.boxShadow = "0 10px 20px rgba(0,0,0,0.16)";
+    if (type === "success") {
+      toast.style.background = "#264d2d";
+      toast.style.color = "#fff";
+    } else {
+      toast.style.background = "#fff";
+      toast.style.color = "#2c241f";
+      toast.style.border = "1px solid #d5c7b4";
+    }
     document.body.appendChild(toast);
 
     setTimeout(function () {
-      toast.style.opacity = '0';
-      toast.style.transition = 'opacity 0.3s';
-      setTimeout(function () {
-        toast.remove();
-      }, 300);
-    }, 4000);
+      toast.remove();
+    }, 2500);
   }
-
-  // Add keyframe for toast animation
-  if (!document.getElementById('toast-styles')) {
-    const style = document.createElement('style');
-    style.id = 'toast-styles';
-    style.textContent = '@keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }';
-    document.head.appendChild(style);
-  }
-
-  // Stagger delay for scroll animations (from data-stagger on parent)
-  var STAGGER_MS = 100;
-
-  function triggerStaggerInView(entry) {
-    var col = entry.target;
-    var stagger = parseInt(col.getAttribute('data-stagger'), 10);
-    if (isNaN(stagger)) stagger = 0;
-    var card = col.querySelector('.product-card, .feature-box, .about-card, .testimonial-card');
-    var el = card || col;
-    if (!el.classList.contains('animate-on-scroll')) el.classList.add('animate-on-scroll');
-    setTimeout(function () {
-      el.classList.add('in-view');
-    }, stagger * STAGGER_MS);
-  }
-
-  var staggerCols = document.querySelectorAll('[data-stagger]');
-  var sectionHeads = document.querySelectorAll('.section-head-reveal, .section-sample-head, .cta-reveal');
-  var observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
-
-  var observer = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        if (entry.target.hasAttribute('data-stagger')) {
-          triggerStaggerInView(entry);
-        } else {
-          entry.target.classList.add('in-view');
-        }
-      });
-    },
-    observerOptions
-  );
-
-  staggerCols.forEach(function (col) {
-    var card = col.querySelector('.product-card, .feature-box, .about-card, .testimonial-card');
-    (card || col).classList.add('animate-on-scroll');
-    observer.observe(col);
-  });
-
-  sectionHeads.forEach(function (el) {
-    observer.observe(el);
-  });
-
-  // Deterrent: reduce casual right-click inspect / view source (capture phase so it runs before browser)
-  document.addEventListener('contextmenu', function (e) {
-    e.preventDefault();
-  }, true);
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'F12' ||
-        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
-        (e.ctrlKey && e.key === 'U') ||
-        (e.metaKey && e.key === 'u') ||
-        (e.metaKey && e.altKey && e.key === 'I')) {
-      e.preventDefault();
-      e.stopPropagation();
-      return false;
-    }
-  }, true);
 }
 
-// Run when DOM is ready; Bootstrap script runs before this
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initRawalsPage);
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initRawalsPage);
 } else {
   initRawalsPage();
 }
