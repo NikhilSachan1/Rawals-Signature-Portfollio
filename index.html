@@ -66,41 +66,75 @@
     </div>
   </header>
 
-  <!-- Hero -->
-  <section id="hero" class="hero-sample">
-    <div class="hero-sample-bg"></div>
-    <div class="container">
-      <div class="row align-items-center min-vh-100 py-5">
-        <div class="col-lg-6 hero-content-col">
+  <!-- Hero — full revamp -->
+  <section id="hero" class="hero-sample hero-v2">
+    <div class="hero-v2-bg" aria-hidden="true">
+      <div class="hero-v2-bg__base"></div>
+      <div class="hero-v2-bg__orb hero-v2-bg__orb--a"></div>
+      <div class="hero-v2-bg__orb hero-v2-bg__orb--b"></div>
+      <div class="hero-v2-bg__orb hero-v2-bg__orb--c"></div>
+      <div class="hero-v2-bg__mesh"></div>
+      <div class="hero-v2-bg__grain"></div>
+    </div>
+    <div class="container hero-v2-container">
+      <div class="row align-items-center min-vh-100 py-5 g-4 g-lg-5">
+        <div class="col-lg-6 order-2 order-lg-1 hero-content-col">
+          <div class="hero-v2-eyebrow hero-reveal" data-delay="0">
+            <span class="hero-v2-eyebrow__mark"></span>
+            <span class="hero-v2-eyebrow__text">RitVirsa</span>
+            <span class="hero-v2-eyebrow__sep" aria-hidden="true"></span>
+            <span class="hero-v2-eyebrow__muted">Legacy of taste &amp; culture</span>
+          </div>
           <div class="hero-badges hero-reveal" data-delay="0">
             <span class="hero-badge">Chutney &amp; more</span>
             <span class="hero-badge">Spices &amp; snacks</span>
             <span class="hero-badge">100% Natural</span>
           </div>
-          <h1 class="hero-sample-title hero-reveal" data-delay="50">Homemade taste, <span class="hero-title-highlight">for every craving</span></h1>
-          <p class="hero-typewriter-wrap hero-reveal" data-delay="100">
-            <span class="hero-typewriter" id="heroTypewriter"></span><span class="hero-typewriter-cursor" aria-hidden="true">|</span>
-          </p>
-          <span class="hero-brand-line hero-reveal" data-delay="50" aria-hidden="true"></span>
-          <p class="hero-sample-desc hero-reveal" data-delay="150">Made with love, just like home. Packed for your everyday cravings.</p>
+          <h1 class="hero-sample-title hero-v2-title hero-reveal" data-delay="50">
+            Homemade taste,<br>
+            <span class="hero-title-highlight">for every craving</span>
+          </h1>
+          <div class="hero-v2-spotlight hero-reveal" data-delay="100">
+            <span class="hero-v2-spotlight__label">Featured picks</span>
+            <p class="hero-v2-spotlight__line" aria-live="polite">
+              <span class="hero-typewriter" id="heroTypewriter"></span><span class="hero-typewriter-cursor" aria-hidden="true">|</span>
+            </p>
+          </div>
+          <p class="hero-sample-desc hero-reveal" data-delay="150">Made with love, just like home. Packed for your everyday cravings — chutneys, spices, chips and healthy bites.</p>
           <div class="hero-btns hero-reveal" data-delay="200">
-            <a href="https://wa.me/919232084970" class="btn btn-hero-sample-primary wa-order-link">Order on WhatsApp</a>
+            <a href="https://wa.me/919232084970" class="btn btn-hero-sample-primary btn-hero-v2-wa wa-order-link">
+              <span class="btn-hero-v2-wa__ico" aria-hidden="true"></span>
+              Order on WhatsApp
+            </a>
             <a href="#products" class="btn btn-hero-sample-outline">Explore our range</a>
           </div>
-          <p class="hero-trust hero-reveal" data-delay="250"><span class="hero-trust-dot">✓</span> One kitchen, many categories &nbsp;·&nbsp; <span class="hero-trust-dot">✓</span> Free delivery on orders above ₹199</p>
+          <p class="hero-trust hero-reveal" data-delay="250">
+            <span class="hero-trust-dot">✓</span> One kitchen, many categories
+            <span class="hero-trust-break" aria-hidden="true">·</span>
+            <span class="hero-trust-dot">✓</span> Free delivery on orders above ₹199
+          </p>
         </div>
-        <div class="col-lg-6 d-flex justify-content-center justify-content-lg-end mt-4 mt-lg-0">
-          <div class="hero-img-block hero-reveal hero-reveal-right" data-delay="150">
-            <div class="hero-img-card">
-              <img src="assets/Hero-image.jpeg" alt="RitVirsa Marwadi Lahsun Chutney" class="hero-img-main" width="800" height="800" loading="eager">
+        <div class="col-lg-6 order-1 order-lg-2 d-flex justify-content-center justify-content-lg-end">
+          <div class="hero-v2-visual hero-reveal hero-reveal-right" data-delay="150">
+            <div class="hero-v2-visual__glow" aria-hidden="true"></div>
+            <div class="hero-v2-visual__ring hero-v2-visual__ring--outer" aria-hidden="true"></div>
+            <div class="hero-v2-visual__ring" aria-hidden="true"></div>
+            <div class="hero-img-block hero-v2-img">
+              <div class="hero-img-card">
+                <img src="assets/Hero-image.jpeg" alt="RitVirsa Marwadi Lahsun Chutney" class="hero-img-main" width="800" height="800" loading="eager">
+              </div>
+              <div class="hero-v2-float">
+                <span class="hero-v2-float__title">Handcrafted</span>
+                <span class="hero-v2-float__sub">in India</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
     <a href="#about" class="hero-scroll hero-scroll-reveal" aria-label="Scroll down">
-      <span>Scroll</span>
-      <span class="scroll-dot"></span>
+      <span class="hero-scroll__label">Scroll</span>
+      <span class="hero-scroll__track" aria-hidden="true"><span class="scroll-dot"></span></span>
     </a>
   </section>
 
