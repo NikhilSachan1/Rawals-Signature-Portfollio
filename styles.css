@@ -1,5 +1,5 @@
 /* ============================================
-   Rawals Signature Chutney — Revamped
+   RitVirsa — Revamped
    ============================================ */
 
 :root {
@@ -166,7 +166,7 @@ body {
   opacity: 0.9;
   color: inherit;
 }
-/* Header logo with image + Rawal's / Signature Chutney */
+/* Header logo with image + RitVirsa */
 .logo-with-img {
   gap: 0.65rem;
 }
@@ -372,7 +372,7 @@ body {
   border-radius: 50px;
   border: 1px solid rgba(201, 162, 39, 0.4);
 }
-.hero-signature-label {
+.hero-brand-label {
   font-family: var(--font-serif);
   font-weight: 600;
   font-size: 0.9rem;
@@ -381,7 +381,7 @@ body {
   text-transform: uppercase;
   margin-bottom: 0.4rem;
 }
-.hero-signature-line {
+.hero-brand-line {
   display: inline-block;
   width: 70px;
   height: 4px;
@@ -588,7 +588,7 @@ body {
   color: var(--brown);
   margin: 0;
 }
-/* ========== About Rawals — story / brand section ========== */
+/* ========== About — story / brand section ========== */
 .about-rawals {
   padding: 4rem 0;
   background: var(--white);
@@ -710,7 +710,7 @@ body {
   object-fit: contain;
 }
 
-/* About section — Rawal's Signature logo (no jar) */
+/* About section — RitVirsa logo (no jar) */
 .about-rawals-logo-wrap {
   display: flex;
   align-items: center;
@@ -827,7 +827,7 @@ body {
   }
 }
 
-/* ========== Our Signature Product — product spotlight ========== */
+/* ========== Product spotlight ========== */
 /* Products section wrapper (Chutney Variants only) */
 .section-products-wrap {
   padding: 4rem 0;
@@ -1752,7 +1752,7 @@ body {
   }
 }
 
-/* How to Enjoy Rawal's Signature Chutney — revamped */
+/* How to Enjoy — revamped */
 .how-to-enjoy-block {
   margin-top: 3.5rem;
   padding: 2.5rem 1.5rem;
@@ -2404,7 +2404,7 @@ body {
   color: var(--gold-light);
 }
 
-/* Footer logo — same layout as header (image + Rawal's + Signature Chutney) */
+/* Footer logo — same layout as header (image + RitVirsa) */
 .footer-revamp .footer-logo.footer-logo-with-img {
   display: inline-flex;
   align-items: center;
@@ -2641,7 +2641,7 @@ body {
 }
 
 /* Toast (used by script.js) */
-.rawals-toast {
+.ritvirsa-toast {
   animation: toastIn 0.3s var(--ease);
 }
 
@@ -2661,7 +2661,7 @@ body {
     font-size: 0.7rem;
     padding: 0.3rem 0.6rem;
   }
-  .hero-signature-label {
+  .hero-brand-label {
     font-size: 0.85rem;
     letter-spacing: 0.1em;
   }
@@ -2741,7 +2741,7 @@ body {
     width: 36px;
     height: 36px;
   }
-  .hero-signature-label {
+  .hero-brand-label {
     font-size: 0.8rem;
   }
 }

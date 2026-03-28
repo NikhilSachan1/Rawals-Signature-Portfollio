@@ -1,9 +1,9 @@
 /**
- * Rawals Signature Chutney - Landing Page Scripts
+ * RitVirsa — Landing Page Scripts
  * Bootstrap 5 + Vanilla JS - Smooth modern animations
  */
 
-function initRawalsPage() {
+function initRitvirsaPage() {
   'use strict';
 
   var yearEl = document.getElementById('year');
@@ -153,11 +153,11 @@ function initRawalsPage() {
 
   // Simple toast notification (no extra dependency)
   function showToast(message, type) {
-    const existing = document.querySelector('.rawals-toast');
+    const existing = document.querySelector('.ritvirsa-toast');
     if (existing) existing.remove();
 
     const toast = document.createElement('div');
-    toast.className = 'rawals-toast position-fixed bottom-0 end-0 m-4 p-3 rounded-3 shadow-lg border-0';
+    toast.className = 'ritvirsa-toast position-fixed bottom-0 end-0 m-4 p-3 rounded-3 shadow-lg border-0';
     toast.style.zIndex = '9999';
     toast.style.minWidth = '280px';
     toast.style.animation = 'slideIn 0.3s ease';
@@ -253,7 +253,7 @@ function initRawalsPage() {
 
 // Run when DOM is ready; Bootstrap script runs before this
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initRawalsPage);
+  document.addEventListener('DOMContentLoaded', initRitvirsaPage);
 } else {
-  initRawalsPage();
+  initRitvirsaPage();
 }
