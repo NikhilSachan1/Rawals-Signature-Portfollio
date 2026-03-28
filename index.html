@@ -42,7 +42,7 @@
           <a class="nav-link-sample" href="#about">About</a>
           <a class="nav-link-sample" href="#products">Chutney</a>
           <a class="nav-link-sample" href="#spices">Spices</a>
-          <a class="nav-link-sample" href="#chips-snacks">Chips/Snacks</a>
+          <a class="nav-link-sample" href="#chips-snacks">Chips &amp; snacks</a>
           <a class="nav-link-sample" href="#healthy-fruits">Healthy foods</a>
           <a class="nav-link-sample" href="#features">Why Us</a>
           <a class="nav-link-sample" href="#contact">Contact</a>
@@ -57,7 +57,7 @@
         <a class="nav-link-sample" href="#about">About</a>
         <a class="nav-link-sample" href="#products">Chutney</a>
         <a class="nav-link-sample" href="#spices">Spices</a>
-        <a class="nav-link-sample" href="#chips-snacks">Chips/Snacks</a>
+        <a class="nav-link-sample" href="#chips-snacks">Chips &amp; snacks</a>
         <a class="nav-link-sample" href="#healthy-fruits">Healthy foods</a>
         <a class="nav-link-sample" href="#features">Why Us</a>
         <a class="nav-link-sample" href="#contact">Contact</a>
@@ -133,18 +133,23 @@
     </div>
   </section>
 
-  <!-- Chutneys / Products -->
-  <section id="products" class="section-products-wrap">
+  <!-- Chutneys — same layout as Chips & Healthy: 3 products only -->
+  <section id="products" class="section-products-wrap range-band--product-style range-band--chutney">
     <div class="container">
-      <!-- Our Chutney Variants - premium grid -->
       <div class="chutney-variants-block">
         <div class="section-sample-head section-head-reveal text-center chutney-variants-head">
           <span class="section-crown" aria-hidden="true">👑</span>
           <span class="section-line-sample" aria-hidden="true"></span>
-          <h2 class="section-heading-sample chutney-variants-title">Our Chutney Variants</h2>
-          <p class="chutney-variants-tagline">Pick your favourite · 200g & 500g jars</p>
+          <p class="range-eyebrow range-eyebrow--center">Our range</p>
+          <h2 class="section-heading-sample chutney-variants-title">Chutney</h2>
+          <p class="chutney-variants-tagline">Homestyle taste · 200g &amp; 400g jars</p>
         </div>
-        <div class="chutney-variants-grid">
+        <ul class="range-trust-strip range-trust-strip--chutney" aria-label="Why our chutney">
+          <li><span class="range-trust-ico" aria-hidden="true">✓</span> 100% natural ingredients</li>
+          <li><span class="range-trust-ico" aria-hidden="true">✓</span> No preservatives</li>
+          <li><span class="range-trust-ico" aria-hidden="true">✓</span> Fresh packed</li>
+        </ul>
+        <div class="chutney-variants-grid chutney-variants-grid--three">
           <article class="chutney-card chutney-card--green" data-stagger="0">
             <span class="chutney-card-badge">Bestseller</span>
             <div class="chutney-card-img-box">
@@ -155,7 +160,7 @@
               <p class="chutney-card-desc">Fresh green chillies and spices. Spicy and memorable taste.</p>
               <div class="chutney-card-prices">
                 <div class="chutney-price-row"><span class="chutney-size">200gm</span><strong class="chutney-amount">₹99</strong></div>
-                <div class="chutney-price-row"><span class="chutney-size">500gm</span><strong class="chutney-amount">₹229</strong></div>
+                <div class="chutney-price-row"><span class="chutney-size">400gm</span><strong class="chutney-amount">₹189</strong></div>
               </div>
               <a href="#contact" class="chutney-card-cta">Order Now</a>
             </div>
@@ -169,138 +174,158 @@
               <p class="chutney-card-desc">Tangy-sweet raw mango chutney. A summer favourite.</p>
               <div class="chutney-card-prices">
                 <div class="chutney-price-row"><span class="chutney-size">200gm</span><strong class="chutney-amount">₹99</strong></div>
-                <div class="chutney-price-row"><span class="chutney-size">500gm</span><strong class="chutney-amount">₹229</strong></div>
+                <div class="chutney-price-row"><span class="chutney-size">400gm</span><strong class="chutney-amount">₹189</strong></div>
               </div>
               <a href="#contact" class="chutney-card-cta">Order Now</a>
             </div>
           </article>
           <article class="chutney-card chutney-card--red" data-stagger="2">
             <div class="chutney-card-img-box">
-              <img src="assets/file_00000000772072099820c9ec5e3f833f(4).png" alt="Tomato Chutney" width="400" height="300" loading="lazy">
-            </div>
-            <div class="chutney-card-content">
-              <h3 class="chutney-card-title">Tomato Chutney</h3>
-              <p class="chutney-card-desc">Fresh tomatoes and herbs. Perfect with every meal.</p>
-              <div class="chutney-card-prices">
-                <div class="chutney-price-row"><span class="chutney-size">200gm</span><strong class="chutney-amount">₹89</strong></div>
-                <div class="chutney-price-row"><span class="chutney-size">500gm</span><strong class="chutney-amount">₹199</strong></div>
-              </div>
-              <a href="#contact" class="chutney-card-cta">Order Now</a>
-            </div>
-          </article>
-          <article class="chutney-card chutney-card--gold" data-stagger="3">
-            <div class="chutney-card-img-box">
               <img src="assets/file_00000000772072099820c9ec5e3f833f(2).png" alt="Marwadi Lahsun Chutney" width="400" height="300" loading="lazy">
             </div>
             <div class="chutney-card-content">
               <h3 class="chutney-card-title">Marwadi Lahsun (Garlic) Chutney</h3>
-              <p class="chutney-card-desc">Rajasthani specialty — bold, fiery, and full of garlic flavour. Perfect with paratha, dal bati, snacks.</p>
+              <p class="chutney-card-desc">Rajasthani specialty — bold garlic flavour. Perfect with paratha, dal bati &amp; snacks.</p>
               <div class="chutney-card-prices">
                 <div class="chutney-price-row"><span class="chutney-size">200gm</span><strong class="chutney-amount">₹99</strong></div>
-                <div class="chutney-price-row"><span class="chutney-size">500gm</span><strong class="chutney-amount">₹229</strong></div>
-              </div>
-              <a href="#contact" class="chutney-card-cta">Order Now</a>
-            </div>
-          </article>
-          <article class="chutney-card chutney-card--red" data-stagger="1">
-            <div class="chutney-card-img-box">
-              <img src="assets/file_00000000772072099820c9ec5e3f833f(2).png" alt="Red Chilli Chutney" width="400" height="300" loading="lazy">
-            </div>
-            <div class="chutney-card-content">
-              <h3 class="chutney-card-title">Red Chilli Chutney</h3>
-              <p class="chutney-card-desc">Made with dry red chillies and spices. Spicy lovers’ favourite.</p>
-              <div class="chutney-card-prices">
-                <div class="chutney-price-row"><span class="chutney-size">200gm</span><strong class="chutney-amount">₹99</strong></div>
-                <div class="chutney-price-row"><span class="chutney-size">500gm</span><strong class="chutney-amount">₹229</strong></div>
-              </div>
-              <a href="#contact" class="chutney-card-cta">Order Now</a>
-            </div>
-          </article>
-          <article class="chutney-card chutney-card--gold" data-stagger="2">
-            <div class="chutney-card-img-box">
-              <img src="assets/file_00000000772072099820c9ec5e3f833f(2).png" alt="Peanut Garlic Chutney" width="400" height="300" loading="lazy">
-            </div>
-            <div class="chutney-card-content">
-              <h3 class="chutney-card-title">Peanut Garlic Chutney</h3>
-              <p class="chutney-card-desc">Creamy and mildly spicy. Popular in Maharashtra & South India.</p>
-              <div class="chutney-card-prices">
-                <div class="chutney-price-row"><span class="chutney-size">200gm</span><strong class="chutney-amount">₹99</strong></div>
-                <div class="chutney-price-row"><span class="chutney-size">500gm</span><strong class="chutney-amount">₹229</strong></div>
-              </div>
-              <a href="#contact" class="chutney-card-cta">Order Now</a>
-            </div>
-          </article>
-          <article class="chutney-card chutney-card--gold" data-stagger="0">
-            <div class="chutney-card-img-box">
-              <img src="assets/file_00000000772072099820c9ec5e3f833f(3).png" alt="Mango Chutney" width="400" height="300" loading="lazy">
-            </div>
-            <div class="chutney-card-content">
-              <h3 class="chutney-card-title">Mango Chutney (Kairi / Aam)</h3>
-              <p class="chutney-card-desc">Sweet & spicy — raw mango or ripe mango version. Very popular seasonal product.</p>
-              <div class="chutney-card-prices">
-                <div class="chutney-price-row"><span class="chutney-size">200gm</span><strong class="chutney-amount">₹99</strong></div>
-                <div class="chutney-price-row"><span class="chutney-size">500gm</span><strong class="chutney-amount">₹229</strong></div>
-              </div>
-              <a href="#contact" class="chutney-card-cta">Order Now</a>
-            </div>
-          </article>
-          <article class="chutney-card chutney-card--gold" data-stagger="1">
-            <div class="chutney-card-img-box">
-              <img src="assets/file_00000000772072099820c9ec5e3f833f(2).png" alt="Til Lahsun Chutney" width="400" height="300" loading="lazy">
-            </div>
-            <div class="chutney-card-content">
-              <h3 class="chutney-card-title">Til Lahsun Chutney</h3>
-              <p class="chutney-card-desc">Sesame and garlic blend — nutty, aromatic, and versatile with meals.</p>
-              <div class="chutney-card-prices">
-                <div class="chutney-price-row"><span class="chutney-size">200gm</span><strong class="chutney-amount">₹99</strong></div>
-                <div class="chutney-price-row"><span class="chutney-size">500gm</span><strong class="chutney-amount">₹229</strong></div>
-              </div>
-              <a href="#contact" class="chutney-card-cta">Order Now</a>
-            </div>
-          </article>
-          <article class="chutney-card chutney-card--green" data-stagger="2">
-            <div class="chutney-card-img-box">
-              <img src="assets/file_00000000772072099820c9ec5e3f833f(2).png" alt="Onion Chutney" width="400" height="300" loading="lazy">
-            </div>
-            <div class="chutney-card-content">
-              <h3 class="chutney-card-title">Onion Chutney</h3>
-              <p class="chutney-card-desc">South Indian style, slightly tangy. Pairs well with idli, dosa, and more.</p>
-              <div class="chutney-card-prices">
-                <div class="chutney-price-row"><span class="chutney-size">200gm</span><strong class="chutney-amount">₹89</strong></div>
-                <div class="chutney-price-row"><span class="chutney-size">500gm</span><strong class="chutney-amount">₹199</strong></div>
+                <div class="chutney-price-row"><span class="chutney-size">400gm</span><strong class="chutney-amount">₹189</strong></div>
               </div>
               <a href="#contact" class="chutney-card-cta">Order Now</a>
             </div>
           </article>
         </div>
+        <div class="range-complete-foot">
+          <p class="range-complete-note">Want tomato, onion or other flavours? — ask us.</p>
+          <a href="#contact" class="range-complete-btn">Enquire for more chutneys</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Spices -->
-  <section id="spices" class="nav-category-section" aria-labelledby="spices-heading">
+  <!-- Spices — coming soon highlight -->
+  <section id="spices" class="range-band range-band--spices" aria-labelledby="spices-heading">
     <div class="container">
-      <p class="nav-category-eyebrow">Our range</p>
-      <h2 id="spices-heading" class="nav-category-title">Spices</h2>
-      <p class="nav-category-text">Whole and ground spices — sourced and blended for everyday cooking. Details and catalogue coming soon.</p>
+      <div class="range-hero">
+        <div class="range-hero-copy">
+          <p class="range-eyebrow">Our range</p>
+          <h2 id="spices-heading" class="range-title">Spices</h2>
+          <p class="range-lead">Whole spices, roasted blends &amp; everyday masalas — sourced with care, packed for aroma that fills your kitchen.</p>
+          <ul class="range-bullets">
+            <li>Whole &amp; ground spices</li>
+            <li>Regional blends &amp; garam masala</li>
+            <li>Small-batch roasting</li>
+          </ul>
+        </div>
+        <div class="range-soon-showcase" aria-label="Spices coming soon">
+          <div class="range-soon-glow" aria-hidden="true"></div>
+          <div class="range-soon-card">
+            <span class="range-soon-pulse" aria-hidden="true"></span>
+            <span class="range-soon-badge">Coming soon</span>
+            <div class="range-soon-icons" aria-hidden="true">
+              <span class="range-soon-ico">🌶️</span>
+              <span class="range-soon-ico">🧄</span>
+              <span class="range-soon-ico">🌿</span>
+            </div>
+            <p class="range-soon-headline">The spice shelf is almost ready</p>
+            <p class="range-soon-desc">Catalogue &amp; packs dropping soon — same RitVirsa quality you trust.</p>
+            <a href="#contact" class="range-soon-link">Get notified <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Chips/Snacks -->
-  <section id="chips-snacks" class="nav-category-section nav-category-section--alt" aria-labelledby="chips-heading">
+  <!-- Chips & snacks — same card layout as chutney (swap placeholder for product img) -->
+  <section id="chips-snacks" class="range-band range-band--chips range-band--complete range-band--product-style" aria-labelledby="chips-heading">
     <div class="container">
-      <p class="nav-category-eyebrow">Our range</p>
-      <h2 id="chips-heading" class="nav-category-title">Chips/Snacks</h2>
-      <p class="nav-category-text">Crispy chips and savoury snacks — perfect with tea or on the go. New flavours launching soon.</p>
+      <div class="chutney-variants-block">
+        <div class="section-sample-head section-head-reveal text-center chutney-variants-head">
+          <span class="section-crown" aria-hidden="true">🥔</span>
+          <span class="section-line-sample" aria-hidden="true"></span>
+          <p class="range-eyebrow range-eyebrow--center">Our range</p>
+          <h2 id="chips-heading" class="section-heading-sample chutney-variants-title">Chips &amp; snacks</h2>
+          <p class="chutney-variants-tagline">Crunchy &amp; savoury · 250g &amp; 500g packs</p>
+        </div>
+        <ul class="range-trust-strip range-trust-strip--chips" aria-label="Why our snacks">
+          <li><span class="range-trust-ico" aria-hidden="true">✓</span> Small batches, bold crunch</li>
+          <li><span class="range-trust-ico" aria-hidden="true">✓</span> Clean ingredients</li>
+          <li><span class="range-trust-ico" aria-hidden="true">✓</span> Hygienic packing</li>
+        </ul>
+        <div class="chutney-variants-grid chutney-variants-grid--two">
+          <article class="chutney-card chutney-card--gold" data-stagger="0">
+            <div class="chutney-card-img-box chutney-card-img-box--placeholder">
+              <span class="chutney-card-placeholder-label">Product image</span>
+            </div>
+            <div class="chutney-card-content">
+              <h3 class="chutney-card-title">Banana Chips</h3>
+              <p class="chutney-card-desc">Crispy slices of banana — lightly salted or masala. Perfect tea-time crunch.</p>
+              <div class="chutney-card-prices">
+                <div class="chutney-price-row"><span class="chutney-size">250gm</span><strong class="chutney-amount">₹79</strong></div>
+                <div class="chutney-price-row"><span class="chutney-size">500gm</span><strong class="chutney-amount">₹149</strong></div>
+              </div>
+              <a href="#contact" class="chutney-card-cta chutney-card-cta--snack">Order Now</a>
+            </div>
+          </article>
+          <article class="chutney-card chutney-card--green" data-stagger="1">
+            <div class="chutney-card-img-box chutney-card-img-box--placeholder">
+              <span class="chutney-card-placeholder-label">Product image</span>
+            </div>
+            <div class="chutney-card-content">
+              <h3 class="chutney-card-title">Potato Chips</h3>
+              <p class="chutney-card-desc">Thin, golden potato chips — classic salted &amp; your favourite flavours.</p>
+              <div class="chutney-card-prices">
+                <div class="chutney-price-row"><span class="chutney-size">250gm</span><strong class="chutney-amount">₹69</strong></div>
+                <div class="chutney-price-row"><span class="chutney-size">500gm</span><strong class="chutney-amount">₹129</strong></div>
+              </div>
+              <a href="#contact" class="chutney-card-cta chutney-card-cta--snack">Order Now</a>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="range-complete-foot range-complete-foot--chips">
+        <p class="range-complete-note">Party packs, gifting, or retail — tell us what you need.</p>
+        <a href="#contact" class="range-complete-btn range-complete-btn--chips">Enquire for chips &amp; snacks</a>
+      </div>
     </div>
   </section>
 
-  <!-- Healthy foods -->
-  <section id="healthy-fruits" class="nav-category-section" aria-labelledby="fruits-heading">
+  <!-- Healthy foods — same card layout as chutney -->
+  <section id="healthy-fruits" class="range-band range-band--healthy range-band--complete range-band--product-style" aria-labelledby="healthy-heading">
     <div class="container">
-      <p class="nav-category-eyebrow">Our range</p>
-      <h2 id="fruits-heading" class="nav-category-title">Healthy foods</h2>
-      <p class="nav-category-text">Seasonal and dried fruit picks — natural sweetness, no compromise on quality. More soon.</p>
+      <div class="chutney-variants-block">
+        <div class="section-sample-head section-head-reveal text-center chutney-variants-head">
+          <span class="section-crown" aria-hidden="true">🌿</span>
+          <span class="section-line-sample" aria-hidden="true"></span>
+          <p class="range-eyebrow range-eyebrow--center">Our range</p>
+          <h2 id="healthy-heading" class="section-heading-sample chutney-variants-title">Healthy foods</h2>
+          <p class="chutney-variants-tagline">Roasted makhana · 250g &amp; 500g · Light &amp; nutritious</p>
+        </div>
+        <ul class="range-trust-strip range-trust-strip--healthy" aria-label="Why our healthy range">
+          <li><span class="range-trust-ico" aria-hidden="true">✓</span> No compromise on quality</li>
+          <li><span class="range-trust-ico" aria-hidden="true">✓</span> Transparent sourcing</li>
+          <li><span class="range-trust-ico" aria-hidden="true">✓</span> Fresh-seal packs</li>
+        </ul>
+        <div class="chutney-variants-grid chutney-variants-grid--single">
+          <article class="chutney-card chutney-card--sage" data-stagger="0">
+            <div class="chutney-card-img-box chutney-card-img-box--placeholder chutney-card-img-box--placeholder-sage">
+              <span class="chutney-card-placeholder-label">Product image</span>
+            </div>
+            <div class="chutney-card-content">
+              <h3 class="chutney-card-title">Makhana</h3>
+              <p class="chutney-card-desc">Fox nuts, roasted to perfection — lightly seasoned, high protein, guilt-free munching anytime.</p>
+              <div class="chutney-card-prices">
+                <div class="chutney-price-row"><span class="chutney-size">250gm</span><strong class="chutney-amount">₹149</strong></div>
+                <div class="chutney-price-row"><span class="chutney-size">500gm</span><strong class="chutney-amount">₹279</strong></div>
+              </div>
+              <a href="#contact" class="chutney-card-cta chutney-card-cta--sage">Order Now</a>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="range-complete-foot range-complete-foot--healthy">
+        <p class="range-complete-note">Custom hampers or office gifting — we can curate.</p>
+        <a href="#contact" class="range-complete-btn range-complete-btn--healthy">Enquire for healthy foods</a>
+      </div>
     </div>
   </section>
 
@@ -321,7 +346,7 @@
         <div class="why-choose-card" data-stagger="1">
           <span class="why-choose-icon" aria-hidden="true">👨‍🍳</span>
           <h3 class="why-choose-card-title">Homemade Taste</h3>
-          <p class="why-choose-card-text">Grandma’s recipe in every jar — the taste you remember.</p>
+          <p class="why-choose-card-text">Grandma’s recipe in every pack — the taste you remember.</p>
         </div>
         <div class="why-choose-card" data-stagger="2">
           <span class="why-choose-icon" aria-hidden="true">📦</span>
@@ -494,7 +519,7 @@
             <li><a href="#about">About</a></li>
             <li><a href="#products">Chutney</a></li>
             <li><a href="#spices">Spices</a></li>
-            <li><a href="#chips-snacks">Chips/Snacks</a></li>
+            <li><a href="#chips-snacks">Chips &amp; snacks</a></li>
             <li><a href="#healthy-fruits">Healthy foods</a></li>
             <li><a href="#features">Why Us</a></li>
             <li><a href="#contact">Contact</a></li>
