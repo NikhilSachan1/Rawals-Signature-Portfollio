@@ -62,7 +62,14 @@ function initRitvirsaPage() {
   (function runTypewriter() {
     var el = document.getElementById('heroTypewriter');
     if (!el) return;
-    var phrases = ['Mirchi Chutney', 'Aam Chutney', 'Tomato Chutney', 'Marwadi Lahsun'];
+    var phrases = [
+      'Mirchi Chutney',
+      'Whole Spices',
+      'Masala Chips',
+      'Seasonal Fruits',
+      'Aam Chutney',
+      'Garam Masala'
+    ];
     var phraseIndex = 0;
     var charIndex = 0;
     var isDeleting = false;
