@@ -125,31 +125,75 @@ body {
   outline-offset: 3px;
 }
 
-/* ========== Header (Menu bar) – white by default, maroon on scroll ========== */
+/* ========== Header — frosted glass over hero (no borders); solid bar after scroll ========== */
 .header-sample {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: var(--white);
-  color: var(--brown);
   z-index: 1030;
-  transition: box-shadow 0.3s var(--ease), background 0.3s var(--ease);
-  border-bottom: 1px solid var(--gray-200);
-}
-.header-sample-border {
-  height: 3px;
-  background: linear-gradient(90deg, transparent 0%, var(--gold-border) 20%, var(--gold-light) 50%, var(--gold-border) 80%, transparent 100%);
-  opacity: 0.6;
-  transition: opacity 0.3s var(--ease);
+  color: var(--cream);
+  border: none;
+  box-shadow: none;
+  /* Soft tint + blur: reads as one surface with hero, no hard line */
+  background: rgba(22, 12, 12, 0.28);
+  backdrop-filter: blur(18px) saturate(1.15);
+  -webkit-backdrop-filter: blur(18px) saturate(1.15);
+  transition:
+    box-shadow 0.4s var(--ease),
+    background 0.4s var(--ease),
+    backdrop-filter 0.4s var(--ease),
+    -webkit-backdrop-filter 0.4s var(--ease);
 }
 .header-sample.scrolled {
-  background: var(--maroon);
-  border-bottom-color: transparent;
-  box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+  background: rgba(107, 45, 45, 0.97);
+  backdrop-filter: blur(12px) saturate(1.05);
+  -webkit-backdrop-filter: blur(12px) saturate(1.05);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
 }
-.header-sample.scrolled .header-sample-border {
-  opacity: 0.9;
+/* Light nav over hero (matches hero maroon gradient behind it) */
+.header-sample:not(.scrolled) .logo-brand-name {
+  color: var(--cream);
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.35);
+}
+.header-sample:not(.scrolled) .logo-brand-tagline {
+  color: var(--gold-light);
+}
+.header-sample:not(.scrolled) .nav-link-sample {
+  color: rgba(255, 255, 246, 0.95) !important;
+}
+.header-sample:not(.scrolled) .nav-link-sample:hover {
+  color: var(--gold-light) !important;
+  background: rgba(255, 255, 255, 0.1);
+}
+.header-sample:not(.scrolled) .nav-toggler-sample span {
+  background: var(--cream);
+}
+.header-sample:not(.scrolled) .logo-img-wrap {
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: none;
+}
+.header-sample:not(.scrolled) .btn-shop-sample {
+  background: var(--gold) !important;
+  color: var(--maroon-dark) !important;
+}
+.header-sample:not(.scrolled) .btn-shop-sample:hover {
+  background: var(--gold-light) !important;
+  color: var(--maroon-dark) !important;
+}
+.header-sample:not(.scrolled) .nav-collapse-sample {
+  background: rgba(18, 10, 10, 0.55);
+  backdrop-filter: blur(20px) saturate(1.1);
+  -webkit-backdrop-filter: blur(20px) saturate(1.1);
+  border-top: none;
+  box-shadow: none;
+}
+.header-sample:not(.scrolled) .nav-collapse-sample .nav-link-sample {
+  color: rgba(255, 255, 246, 0.95) !important;
+}
+.header-sample:not(.scrolled) .nav-collapse-sample .nav-link-sample:hover {
+  color: var(--gold-light) !important;
+  background: rgba(255, 255, 255, 0.06);
 }
 .header-inner {
   display: flex;
@@ -316,15 +360,14 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  background: var(--gray-100);
-  margin: 0 -0.75rem -0.5rem;
-  border-radius: 0 0 12px 12px;
-  border-top: 1px solid var(--gray-200);
-  transition: background 0.3s var(--ease), border-color 0.3s var(--ease);
+  background: rgba(245, 245, 245, 0.96);
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  transition: background 0.35s var(--ease);
 }
 .header-sample.scrolled .nav-collapse-sample {
-  background: var(--maroon-dark);
-  border-top-color: rgba(255,255,255,0.1);
+  background: rgba(55, 22, 22, 0.96);
 }
 .nav-collapse-sample .nav-link-sample {
   padding: 0.6rem 1rem !important;
