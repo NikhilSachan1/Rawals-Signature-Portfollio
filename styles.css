@@ -206,15 +206,15 @@ body {
 }
 .logo-brand-tagline {
   font-family: var(--font-serif);
-  font-size: 0.62rem;
+  font-size: 0.78rem;
   font-weight: 600;
   font-style: italic;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   color: var(--gold);
   text-transform: none;
   transition: color 0.3s var(--ease);
-  max-width: 12rem;
-  line-height: 1.25;
+  max-width: 15rem;
+  line-height: 1.35;
 }
 .header-sample.scrolled .logo-brand-name {
   color: var(--white);
@@ -381,16 +381,6 @@ body {
   padding: 0.35rem 0.75rem;
   border-radius: 50px;
   border: 1px solid rgba(201, 162, 39, 0.4);
-}
-.hero-site-tagline {
-  font-family: var(--font-serif);
-  font-size: clamp(1rem, 2.2vw, 1.2rem);
-  font-weight: 600;
-  font-style: italic;
-  color: var(--gold-light);
-  letter-spacing: 0.04em;
-  margin: 0 0 0.65rem;
-  line-height: 1.35;
 }
 .hero-brand-label {
   font-family: var(--font-serif);
@@ -559,12 +549,6 @@ body {
   color: var(--cream);
   letter-spacing: 0.06em;
   opacity: 0.9;
-}
-.hero-sample-tag-cats {
-  margin-top: 0.35rem !important;
-  font-size: 0.8rem !important;
-  font-weight: 500;
-  opacity: 0.8;
 }
 .hero-sample-tag {
   font-size: 0.9rem;
@@ -2515,14 +2499,14 @@ body {
 }
 .footer-revamp .footer-logo-tagline {
   font-family: var(--font-serif);
-  font-size: 0.62rem;
+  font-size: 0.78rem;
   font-weight: 600;
   font-style: italic;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
   color: var(--gold-light);
   text-transform: none;
-  max-width: 14rem;
-  line-height: 1.25;
+  max-width: 16rem;
+  line-height: 1.35;
 }
 
 .footer-tagline {
@@ -2742,9 +2726,6 @@ body {
     font-size: 0.85rem;
     letter-spacing: 0.1em;
   }
-  .hero-site-tagline {
-    font-size: 0.95rem;
-  }
   .hero-sample-title {
     font-size: clamp(1.75rem, 5vw, 2.25rem);
   }
@@ -2761,7 +2742,7 @@ body {
     font-size: 1.2rem;
   }
   .logo-brand-tagline {
-    font-size: 0.55rem;
+    font-size: 0.68rem;
     letter-spacing: 0.04em;
   }
   .logo-img-wrap {
@@ -2814,7 +2795,7 @@ body {
     font-size: 1.1rem;
   }
   .logo-brand-tagline {
-    font-size: 0.5rem;
+    font-size: 0.62rem;
     letter-spacing: 0.04em;
   }
   .logo-img-wrap {
@@ -2823,9 +2804,6 @@ body {
   }
   .hero-brand-label {
     font-size: 0.8rem;
-  }
-  .hero-site-tagline {
-    font-size: 0.9rem;
   }
 }
 
