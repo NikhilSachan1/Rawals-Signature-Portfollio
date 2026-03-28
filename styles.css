@@ -773,47 +773,68 @@ body {
   object-fit: contain;
 }
 
-/* About section — RitVirsa logo (no jar) */
-.about-rawals-logo-wrap {
+/* About — large photo (placeholder or real image) */
+.about-rawals-figure {
+  margin: 0;
+  width: 100%;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 992px) {
+  .about-rawals-figure {
+    max-width: none;
+  }
+}
+.about-rawals-photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  min-height: min(52vw, 340px);
+  border-radius: 22px;
+  overflow: hidden;
+  background: var(--cream);
+  box-shadow:
+    0 24px 56px rgba(61, 41, 20, 0.12),
+    0 0 0 1px rgba(201, 162, 39, 0.25);
+}
+.about-rawals-photo--placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
+  background:
+    linear-gradient(145deg, rgba(201, 162, 39, 0.06) 0%, transparent 45%),
+    linear-gradient(165deg, #faf8f4 0%, #ebe3d6 55%, #f2ede6 100%);
+  border: 2px dashed rgba(107, 45, 45, 0.22);
 }
-.about-rawals-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
-  background: var(--cream);
-  border-radius: 20px;
-  border: 1px solid var(--cream-dark);
-  box-shadow: 0 12px 40px rgba(61, 41, 20, 0.08);
-}
-.about-rawals-logo-img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 16px;
-  border: 2px solid var(--cream-dark);
-  margin-bottom: 1rem;
-  display: block;
-}
-.about-rawals-logo-name {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: 1.75rem;
-  color: var(--brown);
-  letter-spacing: -0.02em;
-  margin-bottom: 0.2rem;
-}
-.about-rawals-logo-tagline {
-  font-family: var(--font-body);
+.about-rawals-placeholder-label {
   font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  color: var(--gold);
+  font-weight: 800;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
+  color: var(--gray-500);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(201, 162, 39, 0.4);
+}
+.about-rawals-photo-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+.about-rawals-caption {
+  margin: 1rem 0 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-style: italic;
+  font-family: var(--font-serif);
+  color: var(--gray-500);
+  text-align: center;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
 }
 
 /* About / Our Story — small screens */
@@ -876,21 +897,12 @@ body {
     text-align: center;
     box-sizing: border-box;
   }
-  .about-rawals-logo {
-    padding: 1.5rem 1.25rem;
-    border-radius: 16px;
+  .about-rawals-photo {
+    min-height: 240px;
+    border-radius: 18px;
   }
-  .about-rawals-logo-img {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 0.75rem;
-  }
-  .about-rawals-logo-name {
-    font-size: 1.5rem;
-  }
-  .about-rawals-logo-tagline {
-    font-size: 0.65rem;
-    letter-spacing: 0.18em;
+  .about-rawals-caption {
+    font-size: 0.78rem;
   }
 }
 
