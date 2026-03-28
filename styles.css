@@ -205,13 +205,16 @@ body {
   transition: color 0.3s var(--ease);
 }
 .logo-brand-tagline {
-  font-family: var(--font-body);
-  font-size: 0.6rem;
+  font-family: var(--font-serif);
+  font-size: 0.62rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  font-style: italic;
+  letter-spacing: 0.06em;
   color: var(--gold);
-  text-transform: uppercase;
+  text-transform: none;
   transition: color 0.3s var(--ease);
+  max-width: 12rem;
+  line-height: 1.25;
 }
 .header-sample.scrolled .logo-brand-name {
   color: var(--white);
@@ -378,6 +381,16 @@ body {
   padding: 0.35rem 0.75rem;
   border-radius: 50px;
   border: 1px solid rgba(201, 162, 39, 0.4);
+}
+.hero-site-tagline {
+  font-family: var(--font-serif);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  font-weight: 600;
+  font-style: italic;
+  color: var(--gold-light);
+  letter-spacing: 0.04em;
+  margin: 0 0 0.65rem;
+  line-height: 1.35;
 }
 .hero-brand-label {
   font-family: var(--font-serif);
@@ -547,6 +560,12 @@ body {
   letter-spacing: 0.06em;
   opacity: 0.9;
 }
+.hero-sample-tag-cats {
+  margin-top: 0.35rem !important;
+  font-size: 0.8rem !important;
+  font-weight: 500;
+  opacity: 0.8;
+}
 .hero-sample-tag {
   font-size: 0.9rem;
   font-weight: 600;
@@ -631,8 +650,18 @@ body {
   font-weight: 700;
   font-size: clamp(1.5rem, 2.5vw, 1.85rem);
   color: var(--brown);
-  margin: 0 0 1rem;
+  margin: 0 0 0.5rem;
   line-height: 1.25;
+}
+
+.about-rawals-site-tagline {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--maroon);
+  letter-spacing: 0.03em;
+  margin: 0 0 1rem;
 }
 
 .about-rawals-lead {
@@ -792,8 +821,12 @@ body {
   }
   .about-rawals-title {
     font-size: 1.35rem;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.35rem;
     line-height: 1.3;
+  }
+  .about-rawals-site-tagline {
+    font-size: 0.95rem;
+    margin-bottom: 0.65rem;
   }
   .about-rawals-lead {
     font-size: 1rem;
@@ -2481,12 +2514,15 @@ body {
   letter-spacing: -0.02em;
 }
 .footer-revamp .footer-logo-tagline {
-  font-family: var(--font-body);
-  font-size: 0.6rem;
+  font-family: var(--font-serif);
+  font-size: 0.62rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  font-style: italic;
+  letter-spacing: 0.06em;
   color: var(--gold-light);
-  text-transform: uppercase;
+  text-transform: none;
+  max-width: 14rem;
+  line-height: 1.25;
 }
 
 .footer-tagline {
@@ -2706,6 +2742,9 @@ body {
     font-size: 0.85rem;
     letter-spacing: 0.1em;
   }
+  .hero-site-tagline {
+    font-size: 0.95rem;
+  }
   .hero-sample-title {
     font-size: clamp(1.75rem, 5vw, 2.25rem);
   }
@@ -2723,7 +2762,7 @@ body {
   }
   .logo-brand-tagline {
     font-size: 0.55rem;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.04em;
   }
   .logo-img-wrap {
     width: 38px;
@@ -2776,7 +2815,7 @@ body {
   }
   .logo-brand-tagline {
     font-size: 0.5rem;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.04em;
   }
   .logo-img-wrap {
     width: 36px;
@@ -2784,6 +2823,9 @@ body {
   }
   .hero-brand-label {
     font-size: 0.8rem;
+  }
+  .hero-site-tagline {
+    font-size: 0.9rem;
   }
 }
 
