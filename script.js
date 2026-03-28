@@ -9,6 +9,53 @@ function initRitvirsaPage() {
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // Order on WhatsApp — prefill message with product name + image URL (wa.me cannot attach files; link shares the asset)
+  var WA_ORDER_PHONE = '9232084970';
+  function waOrderAbsoluteUrl(src) {
+    if (!src || !String(src).trim()) return '';
+    try {
+      return new URL(src, window.location.href).href;
+    } catch (e) {
+      return src;
+    }
+  }
+  function buildWaOrderMessage(productName, imageSrc) {
+    var lines = [
+      'Hi RitVirsa!',
+      '',
+      'I want to order: *' + productName + '*'
+    ];
+    if (imageSrc) {
+      lines.push('');
+      lines.push('Product image (open link to view):');
+      lines.push(imageSrc);
+    }
+    lines.push('');
+    lines.push('Please confirm pack size, price & delivery.');
+    return lines.join('\n');
+  }
+  document.querySelectorAll('a.wa-order-link').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      var product = 'RitVirsa order';
+      var imgSrc = '';
+      var card = link.closest('.chutney-card');
+      if (card) {
+        var titleEl = card.querySelector('.chutney-card-title');
+        if (titleEl) product = titleEl.textContent.trim();
+        var imgEl = card.querySelector('.chutney-card-img-box img');
+        if (imgEl) imgSrc = waOrderAbsoluteUrl(imgEl.getAttribute('src') || '');
+      } else if (link.classList.contains('btn-hero-sample-primary')) {
+        product = 'Order from website (hero)';
+        var heroIm = document.querySelector('.hero-img-main');
+        if (heroIm) imgSrc = waOrderAbsoluteUrl(heroIm.getAttribute('src') || '');
+      }
+      var url =
+        'https://wa.me/' + WA_ORDER_PHONE + '?text=' + encodeURIComponent(buildWaOrderMessage(product, imgSrc));
+      window.open(url, '_blank', 'noopener,noreferrer');
+    });
+  });
+
   // Navbar: slide-in on load, then scroll state
   var mainNav = document.getElementById('mainNav');
   if (mainNav) {
@@ -23,6 +70,69 @@ function initRitvirsaPage() {
     window.addEventListener('scroll', updateNavbar);
     updateNavbar();
   }
+
+  // Nav scroll-spy: highlight section link while scrolling
+  var spySectionIds = [
+    'hero',
+    'about',
+    'products',
+    'spices',
+    'chips-snacks',
+    'healthy-fruits',
+    'features',
+    'contact'
+  ];
+
+  function updateNavScrollSpy() {
+    var nav = document.getElementById('mainNav');
+    var offset = nav ? nav.offsetHeight + 28 : 100;
+    var line = window.scrollY + offset;
+    var activeId = spySectionIds[0];
+    for (var i = 0; i < spySectionIds.length; i++) {
+      var sec = document.getElementById(spySectionIds[i]);
+      if (!sec) continue;
+      var top = sec.getBoundingClientRect().top + window.scrollY;
+      if (top <= line) {
+        activeId = spySectionIds[i];
+      }
+    }
+    document.querySelectorAll('#mainNav a.nav-link-sample[href^="#"]').forEach(function (link) {
+      var href = link.getAttribute('href');
+      if (!href || href.length < 2) return;
+      var id = href.slice(1);
+      if (id === activeId) {
+        link.classList.add('nav-link-active');
+      } else {
+        link.classList.remove('nav-link-active');
+      }
+    });
+    document.querySelectorAll('#mainNav .btn-shop-sample[href="#contact"]').forEach(function (btn) {
+      if (activeId === 'contact') {
+        btn.classList.add('btn-shop-sample--active');
+      } else {
+        btn.classList.remove('btn-shop-sample--active');
+      }
+    });
+  }
+
+  var spyTicking = false;
+  window.addEventListener(
+    'scroll',
+    function () {
+      if (!spyTicking) {
+        window.requestAnimationFrame(function () {
+          updateNavScrollSpy();
+          spyTicking = false;
+        });
+        spyTicking = true;
+      }
+    },
+    { passive: true }
+  );
+  window.addEventListener('resize', function () {
+    updateNavScrollSpy();
+  });
+  updateNavScrollSpy();
 
   // Back to top button - show after scrolling down
   var backToTop = document.getElementById('backToTop');

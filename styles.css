@@ -166,6 +166,16 @@ body {
   color: var(--gold-light) !important;
   background: rgba(255, 255, 255, 0.1);
 }
+.header-sample:not(.scrolled) .nav-link-sample.nav-link-active {
+  color: var(--gold-light) !important;
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: inset 0 -2px 0 var(--gold-light);
+}
+.header-sample:not(.scrolled) .nav-collapse-sample .nav-link-sample.nav-link-active {
+  color: var(--gold-light) !important;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 3px 0 0 var(--gold-light);
+}
 .header-sample:not(.scrolled) .nav-toggler-sample span {
   background: var(--cream);
 }
@@ -290,6 +300,12 @@ body {
   color: var(--maroon) !important;
   background: var(--gray-100);
 }
+.nav-link-sample.nav-link-active {
+  color: var(--maroon) !important;
+  font-weight: 700;
+  background: rgba(107, 45, 45, 0.08);
+  box-shadow: inset 0 -2px 0 var(--gold);
+}
 .header-sample.scrolled .nav-link-sample {
   color: var(--cream) !important;
 }
@@ -297,17 +313,28 @@ body {
   color: var(--gold-light) !important;
   background: rgba(255,255,255,0.08);
 }
+.header-sample.scrolled .nav-link-sample.nav-link-active {
+  color: var(--white) !important;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 -2px 0 var(--gold-light);
+}
+.header-sample.scrolled .nav-collapse-sample .nav-link-sample.nav-link-active {
+  color: var(--gold-light) !important;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: inset 3px 0 0 var(--gold-light);
+}
 .btn-shop-sample {
   background: var(--maroon) !important;
   color: var(--white) !important;
   border: none !important;
   font-weight: 700;
-  font-size: clamp(0.78rem, 0.95vw, 0.88rem);
-  padding: 0.45rem 0.95rem !important;
+  font-size: clamp(0.72rem, 0.9vw, 0.88rem);
+  padding: 0.45rem 0.85rem !important;
   border-radius: 8px;
   text-decoration: none;
   transition: background 0.2s, color 0.2s, transform 0.2s;
   margin-left: 0.5rem;
+  white-space: nowrap;
 }
 .btn-shop-sample:hover {
   background: var(--maroon-dark) !important;
@@ -321,6 +348,31 @@ body {
 .header-sample.scrolled .btn-shop-sample:hover {
   background: var(--gold-light) !important;
   color: var(--maroon-dark) !important;
+}
+
+/* Contact section active — same scroll-spy as nav links */
+.header-sample:not(.scrolled) .btn-shop-sample.btn-shop-sample--active {
+  outline: 2px solid var(--cream);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.55) !important;
+}
+.header-sample:not(.scrolled) .btn-shop-sample.btn-shop-sample--active:hover {
+  background: var(--gold-light) !important;
+  color: var(--maroon-dark) !important;
+}
+.header-sample.scrolled .btn-shop-sample.btn-shop-sample--active {
+  background: var(--cream) !important;
+  color: var(--maroon-dark) !important;
+  outline: 2px solid var(--gold-light);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25) !important;
+}
+.header-sample.scrolled .btn-shop-sample.btn-shop-sample--active:hover {
+  background: var(--white) !important;
+  color: var(--maroon) !important;
+}
+.nav-collapse-sample .btn-shop-sample.btn-shop-sample--active {
+  outline-offset: 2px;
 }
 .nav-toggler-sample {
   width: 44px;
