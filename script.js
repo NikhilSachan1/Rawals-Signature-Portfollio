@@ -63,12 +63,11 @@ function initRitvirsaPage() {
     var el = document.getElementById('heroTypewriter');
     if (!el) return;
     var phrases = [
-      'Mirchi Chutney',
-      'Whole Spices',
-      'Masala Chips',
-      'Seasonal Fruits',
-      'Aam Chutney',
-      'Garam Masala'
+      'Marwadi Lahsun chutney',
+      'Garlic chutney',
+      'Banana chips',
+      'Makhana',
+      'Potato chips'
     ];
     var phraseIndex = 0;
     var charIndex = 0;
