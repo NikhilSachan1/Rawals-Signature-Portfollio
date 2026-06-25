@@ -81,3 +81,48 @@
   const activeFilter = document.querySelector('.filter-btn.active');
   if (activeFilter) applyProductFilter(activeFilter.dataset.filter);
 })();
+
+(function initCustomScrollbar() {
+  const root = document.documentElement;
+  const bar = document.createElement('div');
+  bar.className = 'scroll-thumb';
+  bar.setAttribute('aria-hidden', 'true');
+
+  const thumb = document.createElement('div');
+  thumb.className = 'scroll-thumb__bar';
+  bar.appendChild(thumb);
+  document.body.appendChild(bar);
+
+  let hideTimer;
+
+  const update = () => {
+    const scrollTop = root.scrollTop;
+    const viewHeight = root.clientHeight;
+    const scrollHeight = root.scrollHeight;
+    const maxScroll = scrollHeight - viewHeight;
+
+    if (maxScroll <= 1) {
+      bar.classList.remove('is-visible');
+      return;
+    }
+
+    const thumbHeight = Math.max(40, (viewHeight / scrollHeight) * viewHeight);
+    const maxThumbTop = viewHeight - thumbHeight;
+    const thumbTop = (scrollTop / maxScroll) * maxThumbTop;
+
+    thumb.style.height = `${thumbHeight}px`;
+    thumb.style.transform = `translate3d(0, ${thumbTop}px, 0)`;
+  };
+
+  const onScrollThumb = () => {
+    update();
+    bar.classList.add('is-visible');
+    clearTimeout(hideTimer);
+    hideTimer = setTimeout(() => bar.classList.remove('is-visible'), 900);
+  };
+
+  window.addEventListener('scroll', onScrollThumb, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+  onScrollThumb();
+})();
