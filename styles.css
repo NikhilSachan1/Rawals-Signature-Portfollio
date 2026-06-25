@@ -67,6 +67,24 @@ img { display: block; max-width: 100%; }
 
 a { color: inherit; }
 
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 1000;
+  padding: 10px 16px;
+  background: var(--brand-red);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
 /* Header â€” overlays hero, glass blur, turns white on scroll */
 header {
   position: fixed;
@@ -398,7 +416,7 @@ header.menu-open .menu-btn span {
   color: var(--brand-red);
   line-height: 1.1;
   display: block;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
   letter-spacing: 1px;
 }
 
