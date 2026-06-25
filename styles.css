@@ -1316,7 +1316,7 @@ header.menu-open .menu-btn span {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
