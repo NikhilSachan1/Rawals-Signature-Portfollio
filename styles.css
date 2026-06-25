@@ -987,6 +987,43 @@ header.menu-open .menu-btn span {
 
 .about-text strong { color: var(--brand-red); }
 
+.about-promise {
+  margin: 0 0 24px;
+  padding: 20px 22px;
+  background: #fff;
+  border-radius: 14px;
+  border-left: 4px solid var(--brand-red);
+  box-shadow: var(--shadow);
+}
+
+.about-promise p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #555;
+  margin: 0 0 14px;
+}
+
+.about-promise p strong {
+  color: var(--brand-red);
+}
+
+.about-promise__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.about-promise__tags span {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--brand-red);
+  background: rgba(183, 28, 28, 0.08);
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
 .about-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
