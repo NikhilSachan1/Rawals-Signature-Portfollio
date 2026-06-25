@@ -61,15 +61,23 @@
   const filterBtns = document.querySelectorAll('.filter-btn');
   const productCards = document.querySelectorAll('.product-card');
 
+  const applyProductFilter = (filter) => {
+    productCards.forEach((card) => {
+      const cat = card.dataset.category;
+      const isSoon = card.classList.contains('product-card--soon');
+      const hide = filter === 'all' ? isSoon : cat !== filter;
+      card.classList.toggle('is-hidden', hide);
+    });
+  };
+
   filterBtns.forEach((btn) => {
     btn.addEventListener('click', () => {
       filterBtns.forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
-      const filter = btn.dataset.filter;
-      productCards.forEach((card) => {
-        const cat = card.dataset.category;
-        card.classList.toggle('is-hidden', filter !== 'all' && cat !== filter);
-      });
+      applyProductFilter(btn.dataset.filter);
     });
   });
+
+  const activeFilter = document.querySelector('.filter-btn.active');
+  if (activeFilter) applyProductFilter(activeFilter.dataset.filter);
 })();
