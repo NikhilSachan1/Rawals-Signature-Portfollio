@@ -815,7 +815,7 @@ header.menu-open .menu-btn span {
   .product-grid { grid-template-columns: 1fr; }
 }
 
-/* Farm to You */
+/* Farmed for Your Health */
 .farm-steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
