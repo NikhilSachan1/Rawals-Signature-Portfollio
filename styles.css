@@ -56,24 +56,48 @@ header.scrolled {
 
 .logo {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
+  gap: 3px;
   text-decoration: none;
+  line-height: 1;
 }
 
 .logo-img {
-  width: 48px;
-  height: 48px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
   flex-shrink: 0;
-  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.22);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .logo:hover .logo-img {
   transform: scale(1.04);
+}
+
+.logo-tagline {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap;
+  color: #666;
+  transition: color 0.35s ease;
+}
+
+header:not(.scrolled) .logo-tagline {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+header.scrolled .logo-tagline,
+header.menu-open .logo-tagline {
+  color: var(--brand-red);
+  text-shadow: none;
 }
 
 header.scrolled .logo-img {
@@ -1175,6 +1199,11 @@ header.menu-open .menu-btn span {
 
 /* Mobile */
 @media (max-width: 768px) {
+  .logo-tagline {
+    font-size: 7px;
+    letter-spacing: 0.4px;
+  }
+
   .menu-btn {
     display: block;
     z-index: 2;
